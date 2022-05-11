@@ -13,7 +13,7 @@ const Rate = ({ isIncrement, rate }) => {
       {isIncrement ? (
         <ChevronUp fill="#17C784" />
       ) : (
-        <ChevronDown fill="EA3943" />
+        <ChevronDown fill="#EA3943" />
       )}
       <p className={isIncrement ? styles.green : styles.red}>{rate}</p>
     </div>
