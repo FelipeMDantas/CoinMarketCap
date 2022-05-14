@@ -7,8 +7,8 @@ import xrp from '../assets/xrp.png'
 import cardano from '../assets/cardano.png'
 import tera from '../assets/tera.png'
 import solana from '../assets/solana.png'
-import bnd from '../assets/bnd.png'
-import avalancha from '../assets/avalancha.png'
+import bnb from '../assets/bnb.png'
+import avalanche from '../assets/avalanche.png'
 import Image from 'next/image'
 
 const styles = {
@@ -37,7 +37,7 @@ const CMCpriceConverter = ({
             alt=""
           />
         )
-      case 'Etherium':
+      case 'Ethereum':
         return (
           <Image
             src={eth}
@@ -47,10 +47,10 @@ const CMCpriceConverter = ({
             alt=""
           />
         )
-      case 'BND':
+      case 'BNB':
         return (
           <Image
-            src={bnd}
+            src={bnb}
             className="rounded-full"
             width={50}
             height={50}
@@ -110,7 +110,17 @@ const CMCpriceConverter = ({
       case 'Avalanche':
         return (
           <Image
-            src={avalancha}
+            src={avalanche}
+            className="rounded-full"
+            width={50}
+            height={50}
+            alt=""
+          />
+        )
+      case 'Tether':
+        return (
+          <Image
+            src={usdt}
             className="rounded-full"
             width={50}
             height={50}
@@ -154,7 +164,7 @@ const CMCpriceConverter = ({
           <p className="text-3xl">1</p>
           &nbsp;&nbsp;
           <div>
-            <Image alt="" src={conveter} width={40} height={40} />
+            <Image alt="" src={converter} width={40} height={40} />
           </div>
           &nbsp;&nbsp;
           <div className="flex">

@@ -2,6 +2,8 @@ import Header from '../../components/Header'
 import solana from '../../assets/solana.png'
 import Usd from '../../assets/svg/usd'
 import { useEffect, useState } from 'react'
+import CMCpriceConverter from '../../components/CMCpriceConverter'
+import Graph from '../../components/Graph'
 
 const styles = {
   activeTab: `p-1 px-2 rounded-lg bg-[#171924]`,
@@ -60,6 +62,7 @@ const Currencies = () => {
               </div>
             </div>
             <br />
+            <Graph />
             <br />
             <div className={styles.flexBetweenCenter}>
               <div className="flex">
@@ -79,7 +82,17 @@ const Currencies = () => {
             </div>
             <br />
             <br />
+            <CMCpriceConverter
+              from={coinName}
+              fromSymbol={coinSymbol}
+              fromLogo={solana}
+              toLogo={<Usd />}
+              price={price}
+              to="United States Dollars"
+              toSymbol="USD"
+            />
           </div>
+          <div className="ml-5 pt-10"></div>
         </div>
       </main>
     </div>
