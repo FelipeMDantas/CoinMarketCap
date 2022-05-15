@@ -10,6 +10,8 @@ import tera from '../assets/tera.png'
 import solana from '../assets/solana.png'
 import bnb from '../assets/bnb.png'
 import avalanche from '../assets/avalanche.png'
+import DropDownBtn from './buttons/DropDownBtn'
+import RateFilled from './buttons/RateFilled'
 
 const styles = {
   coinDetails: `min-h-screen text-white`,
@@ -21,11 +23,12 @@ const styles = {
   coinSymbol: `bg-slate-800 flex items-center px-2 rounded-xl`,
   coinInfo: `flex justify-between mt-10 p-4 border-t border-gray-800`,
   flexBetween: `flex justify-between,`,
+  coinRates: `w-full flex items-start justify-between`,
 }
 
 const CoinDetail = ({ coinName, coinSymbol, price }) => {
   const coinIcon = () => {
-    switch (from) {
+    switch (coinName) {
       case 'Bitcoin':
         return (
           <Image
@@ -151,7 +154,7 @@ const CoinDetail = ({ coinName, coinSymbol, price }) => {
                 <div className="flex">
                   <p className="text-3xl">{coinName}</p>
                   &nbsp;&nbsp;&nbsp;&nbsp;
-                  <p className={styles.coinSymbol}></p>
+                  <p className={styles.coinSymbol}>{coinSymbol}</p>
                 </div>
               </div>
             </div>
@@ -182,10 +185,11 @@ const CoinDetail = ({ coinName, coinSymbol, price }) => {
             <div className={styles.coinRates}>
               <div>
                 <p className="text-gray-400">
-                  {coinName} {coinSymbol}
+                  {coinName} ({coinSymbol})
                 </p>
                 <div className="my-3 flex">
                   <h1 className="text-4xl">{price}</h1>
+                  <RateFilled />
                 </div>
                 <div className="flex items-start">
                   <p className="text-gray-400">15.26 ETH</p>
@@ -199,7 +203,12 @@ const CoinDetail = ({ coinName, coinSymbol, price }) => {
                 </div>
               </div>
 
-              <div className="flex"></div>
+              <div className="flex">
+                <DropDownBtn label="Buy" />
+                <DropDownBtn label="Exchange" />
+                <DropDownBtn label="Gaming" />
+                <DropDownBtn label="Earn Crypto" />
+              </div>
             </div>
 
             <div className={styles.coinInfo}>

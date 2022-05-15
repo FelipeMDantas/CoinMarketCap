@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react"
-import Header from "../../components/Header"
+import { useState, useEffect } from 'react'
+import Header from '../../components/Header'
+import CoinDetails from '../../components/CoinDetails'
 
 const Price = () => {
   const [coinName, setCoinName] = useState('')
@@ -19,7 +20,12 @@ const Price = () => {
     setCoinSymbol(urlParams.get('symbol'))
   }
 
-  return <Header />
+  return (
+    <div>
+      <Header />
+      <CoinDetails coinName={coinName} price={price} coinSymbol={coinSymbol} />
+    </div>
+  )
 }
 
 export default Price
