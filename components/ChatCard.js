@@ -5,7 +5,6 @@ import Share from '../assets/svg/share'
 import Image from 'next/image'
 import BullishFilled from './buttons/BullishFilled'
 import BearishFilled from './buttons/BearishFilled'
-import Shiba from '../assets/shiba.png'
 
 const styles = {
   postAction: `flex items-center`,
@@ -36,7 +35,7 @@ const ChatCard = ({
             <Image
               width={40}
               height={40}
-              src={Shiba}
+              src={senderAvatar}
               className="rounded-full"
               alt="avatar"
             />

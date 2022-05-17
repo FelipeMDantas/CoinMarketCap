@@ -1,10 +1,12 @@
 import { useState, useEffect, useContext } from 'react'
+import { GunContext } from '../context/gunContext'
 import ChevronDown from '../assets/svg/chevronDown'
 import ChevronUp from '../assets/svg/chevronUp'
 import shiba from '../assets/shiba.png'
 import Image from 'next/image'
 import { Button } from './Button'
 import ChatCard from './ChatCard'
+import faker, { Faker } from '@faker-js/faker'
 
 const styles = {
   bullishLabel: `flex cursor-pointer active:bg-green-600 items-center text text-green-600 border border-green-600 h-min px-2 rounded-lg`,
@@ -24,7 +26,44 @@ const Chat = () => {
   const [message, setMessage] = useState('')
   const [bullishValue, setBullishValue] = useState(true)
 
-  const sendMessage = () => {}
+  const { gun, getMessages, state } = useContext(GunContext)
+
+  useEffect(() => {
+    getMessages('GUN_REF_7')
+  }, [])
+
+  const formattedMessagesArray = () => {
+    const uniqueArray = state.messages.filter((value, index) => {
+      const _value = JSON.stringify(value)
+
+      return (
+        index ===
+        state.messages.findIndex((obj) => {
+          return JSON.stringify(obj) === _value
+        })
+      )
+    })
+    return uniqueArray
+  }
+
+  const sendMessage = () => {
+    if (message.trim() === '') return
+
+    const messagesRef = gun.get('GUN_REF_7')
+
+    const newMessage = {
+      sender: faker.name.findName(),
+      avatar:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OCSMFIW5fZ3vSN6yGpD-w-6SsL2_ZPA_sw&usqp=CAU',
+      content: message.trim(),
+      isBullish: bullishValue,
+      createdAt: Date().substring(4, 11),
+      messageId: Date.now(),
+    }
+
+    messagesRef.set(newMessage)
+    setMessage('')
+  }
 
   return (
     <>
@@ -97,7 +136,22 @@ const Chat = () => {
         <Button label="Post" onPress={sendMessage} />
       </div>
 
-      <ChatCard />
+      {formattedMessagesArray()
+        .slice(0)
+        .reverse()
+        .map((message, index) => (
+          <ChatCard
+            key={index}
+            sender={message.sender}
+            senderUsername={message.username}
+            senderAvatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OCSMFIW5fZ3vSN6yGpD-w-6SsL2_ZPA_sw&usqp=CAU"
+            bullish={message.isBullish}
+            timeStamp={message.createdAt}
+            content={message.content}
+            likes="2.7K"
+            comments="19K"
+          />
+        ))}
     </>
   )
 }
