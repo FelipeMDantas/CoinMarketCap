@@ -1,23 +1,39 @@
-# Next.js + Tailwind CSS Example
+# CoinMarketCap
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+## A dashobard that provides real time information regarding the main cryptocurrencies in the world.
 
-## Deploy your own
+![Felipe|CoinMarketCap](https://img.shields.io/badge/FelipeMDantas-CoinMarketCap-gray)
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+<p>
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+![ReactJS](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+>This project is a clone of the official CoinMarketCap and exhibits data using the API of this very site.
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-# or
-pnpm create next-app -- --example with-tailwindcss with-tailwindcss-app
-```
+### Take a look at the page
+<img src = images/page_gif.gif>
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Tech
+
+A couple of technologies were employed in this project. Among them:
+
+- [ReactJS] - A JavaScript library for building user interfaces
+- [NextJS] - a React framework that gives you building blocks to create web applications
+- [Yarn] - a package manager
+- [Tailwind] - A utility-first CSS framework
+- [Netlify CLI] - lets one configure continuous deployment straight from the command line
+- [Hardhat] - helps with compiling, running and testing smart contracts
+- [FakerJS] - generates massive amounts of fake - but realistic - data for testing and development
+- [Prettier] - a code formatter
+
+    [ReactJS]: https://reactjs.org/
+    [NextJS]: https://nextjs.org/
+    [Yarn]: https://yarnpkg.com/
+    [Tailwind]: https://tailwindcss.com/
+    [Netlify CLI]: https://www.netlify.com/products/cli/
+    [Hardhat]: https://hardhat.org/
+    [FakerJS]: https://fakerjs.dev/
+    [Prettier]: https://prettier.io/
