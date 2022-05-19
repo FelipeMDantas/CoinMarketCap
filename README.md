@@ -1,6 +1,6 @@
 # CoinMarketCap
 
-## A dashobard that provides real time information regarding the main cryptocurrencies in the world.
+## A dashboard that provides real-time information regarding the main cryptocurrencies in the world.
 
 ![Felipe|CoinMarketCap](https://img.shields.io/badge/FelipeMDantas-CoinMarketCap-gray)
 
